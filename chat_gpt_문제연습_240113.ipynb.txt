@@ -1,0 +1,238 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": []
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "code",
+      "execution_count": 3,
+      "metadata": {
+        "id": "VBM0YU5B3LXv",
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "outputId": "6829543c-22a8-4f49-87e9-6c2d68fe1e3e"
+      },
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "9\n"
+          ]
+        }
+      ],
+      "source": [
+        "# 조건문 문제_1 사용자로부터 숫자를 입력받아, 그 숫자가 짝수인지 홀수인지 판별하는 프로그램 작성\n",
+        "\n",
+        "# 1. 사용자 입력 받기\n",
+        "# 2. 짝수 홀수 판별 조건문 만들기\n",
+        "# 3. 판별된 것 출력하기\n",
+        "\n",
+        "user_input = 9 # int(input('숫자를 입력해주세요: '))\n",
+        "print(user_input)"
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 짝수 홀수 판별 조건문\n",
+        "if user_input % 2 == 0:\n",
+        "    print('짝수입니다.')\n",
+        "else:\n",
+        "    print('홀수입니다.')"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "8GBosbFInNC8",
+        "outputId": "dea8cae8-73ce-4258-caf0-0a90e0e10f27"
+      },
+      "execution_count": 5,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "홀수입니다.\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "# 캘린더 만들기\n",
+        "\n",
+        "1. 캘린더 클래스 만들기\n",
+        "2. my_calendar 생성\n",
+        "3. 일정 추가하기\n",
+        "4. 일정확인\n",
+        "5. 일정삭제하기"
+      ],
+      "metadata": {
+        "id": "VS9BzNolzAPT"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 캘린더 클래스 만들기\n",
+        "class calendar:\n",
+        "    def __init__(self):\n",
+        "        self.events = {}\n",
+        "\n",
+        "    def add_event(self, date, event):\n",
+        "        if date in self.events:\n",
+        "            self.events[date].append(event)\n",
+        "        else:\n",
+        "            self.events[date] = [event]\n",
+        "\n",
+        "    def view_events(self, date):\n",
+        "        if date in self.events:\n",
+        "            return self.events[date]\n",
+        "        else:\n",
+        "            return \"No events for this date.\"\n",
+        "\n",
+        "    def remove_events(self, date, event):\n",
+        "        if date in self.events:\n",
+        "            if event in self.events[date]:\n",
+        "                self.events[date].remove(event)\n",
+        "                print(f\"Event '{event}' removed on {date}\")\n",
+        "            else:\n",
+        "                print(f\"No '{event}' event found on {date}\")\n",
+        "        else:\n",
+        "            print(\"No events for this event.\")"
+      ],
+      "metadata": {
+        "id": "1urM3hwlmtju"
+      },
+      "execution_count": 51,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 클래스 부여!\n",
+        "my_calendar = calendar()"
+      ],
+      "metadata": {
+        "id": "wNAeRhqaqgRY"
+      },
+      "execution_count": 52,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 일정 추가\n",
+        "my_calendar.add_event(\"2024-01-13\", \"작업실모임\")\n",
+        "my_calendar.add_event(\"2024-02-02\", \"청첩장 모임\")"
+      ],
+      "metadata": {
+        "id": "OKLYKdZTrEXi"
+      },
+      "execution_count": 53,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 추가한 일정 확인\n",
+        "print(\"Events on 24-01-13\", my_calendar.view_events(\"2024-01-13\"))\n",
+        "print(\"Events on 24-02-02\", my_calendar.view_events(\"2024-02-02\"))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "Cus1IApZrqZd",
+        "outputId": "3e6bd715-ad0d-43c9-c910-564386fabfc6"
+      },
+      "execution_count": 54,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Events on 24-01-13 ['작업실모임']\n",
+            "Events on 24-02-02 ['청첩장 모임']\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# 일정 삭제\n",
+        "my_calendar.remove_events(\"2024-01-13\", \"작업실모임\")"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "6TQbuaiOsbhK",
+        "outputId": "ec590b83-a30e-4668-e907-c2416ad6d465"
+      },
+      "execution_count": 55,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Event '작업실모임' removed on 2024-01-13\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "print(\"Events on 24-01-13\", my_calendar.view_events(\"2024-01-13\"))"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 0
+        },
+        "id": "nRu2XVf2tsy8",
+        "outputId": "96201405-2962-481c-ee30-f164902cb4b9"
+      },
+      "execution_count": 56,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "Events on 24-01-13 []\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "wX1nn8YBweBs"
+      },
+      "execution_count": null,
+      "outputs": []
+    }
+  ]
+}
