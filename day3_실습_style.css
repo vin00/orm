@@ -1,0 +1,61 @@
+main {
+    border: 1px solid #dbdbdb;
+    box-sizing: border-box;
+    width: 350px;
+    height: 140px;
+    border-radius: 5px;
+    margin-top: 30px;
+    margin-left: 25px;
+}
+h2 {
+    box-sizing: border-box;
+    width: 215px;
+    margin-top: 19px;
+    margin-left: 16px;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: -1.2px;
+}
+.login_a {
+    background-color: #711bff;
+    box-sizing: border-box;
+    width: 318px;
+    height: 40px;
+    border-radius: 4px;
+    display: grid;
+    place-items: center;
+    margin-top: 16px;
+    margin-left: 16px;
+}
+a span {
+    color: white;
+    font-size: 12px;
+}
+nav {
+    color: #767676;
+    margin-top: 16px;
+}
+.find_idpw {
+    margin-left: 16px;
+    font-size: 12px;
+}
+.member {
+    margin-left: 106px;
+    font-size: 12px;
+}
+nav img {
+    size: 16px;
+}
+nav :link {
+    color: #767676;
+}
+nav :visited {
+    color: #767676;
+}
+img {
+    vertical-align: bottom;
+    opacity: 1;
+}
+a {
+    text-decoration: none;
+}
