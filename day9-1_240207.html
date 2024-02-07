@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {
+        "user": [
+            {
+                "userName": "jaehyun",
+                "password": "wade"
+            },
+            {
+                "userName": "wonbum",
+                "password": "gary"
+            },
+            {
+                "userName": "jin",
+                "password": "ali"
+            }
+        ]
+    }
+   
+    <script>
+        let result;
+
+        function xhrRequest() {
+            const requestObj = new XMLHttpRequest();
+            requestObj.open('GET', 'https://jsonplaceholder.typicode.com/posts/1');
+            requestObj.onreadystatechange = () => {
+                if (requestObj.readyState == 4 && requestObj.status == "200") {
+
+                    result = requestObj.responseText;
+                    console.log(result);
+
+                }
+            };
+            requestObj.send();
+        }
+
+        xhrRequest();
+
+        console.log(result); 
+        function searchUser(userName, password) {
+            const requestObj = new XMLHttpRequest();
+            requestObj.open('GET', 'users.json');
+            requestObj.onreadystatechange = () => {
+                if (requestObj.readyState == 4 && requestObj.status == "200") {
+
+                    const result = JSON.parse(requestObj.responseText);
+
+                    console.log(result);
+
+
+                }
+            };
+            requestObj.send();
+        }
+
+        function sayHi() {
+            const requestObj = new XMLHttpRequest();
+            requestObj.open('GET', 'greetings.json');
+            requestObj.onreadystatechange = () => {
+                if (requestObj.readyState == 4 && requestObj.status == "200") {
+
+                    const result = requestObj.responseText;
+                    console.log(result);
+
+                }
+            };
+            requestObj.send();
+        }
+
+        searchUser();
+        sayHi();
+
+        const userName = prompt('이름을 입력하세요');
+        const password = prompt('비밀번호를 입력하세요');
+    </script>
+</body>
+</html>
