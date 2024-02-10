@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>여행일정만들기</title>
+    <link rel="stylesheet" href="style/reset.css">
+    <link rel="stylesheet" href="style/common.css">
+    <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+    <header class="cont-header">
+        <h1 class="a11y">여행일정만들기</h1>
+        <img class="img-header" src="images/LOGO.png" alt="로고">
+    </header>
+    <main class="cont-main">
+        <img class="img-main" src="images/풍경사진.png" alt="풍경사진">
+        <h2 class="a11y">여행 일정</h2>
+        <form action="#">
+            <h3 class="txt-title">여행 일정 입력</h3>
+            <p>
+                <label class="txt-label region" for="lablRegion">어디로 여행하시나요?</label>
+                <input class="input-box" id="lablRegion" type="text" placeholder="예&#41; 제주특별자치도">
+            </p>
+            <p>
+                <label class="txt-label" for="lablTime">여행 일정을 입력해 주세요.</label>
+                <input class="input-box" id="lablTime" type="text" placeholder="예&#41; 3일">    
+            </p>
+            <p>
+                <label class="txt-label" for="lablPlace">여행 일정에 꼭 들어갔으면 하는 여행지를 입력해 주세요.</label>
+                <input class="input-box" id="lablPlace" type="text" placeholder="예&#41; 성산일출봉">
+            </p>
+            <fieldset class="check-box">
+                <legend class="txt-label">차를 렌트하셨나요?</legend>
+                <input type="radio" name="radio_rent" value="yes" id="radiorent_yes">
+                <label for="radiorent_yes">예</label>
+                <input type="radio" name="radio_rent" value="no" id="radiorent_no">
+                <label for="radiorent_no">아니오</label>
+            </fieldset>
+            <button class="but-calendar" type="button">일정 생성&#33;</button>
+        </form>
+        <section class="cont-section">
+            <h3 class="txt-title">여행 일정</h3>
+            <form action="#">
+                <label class="a11y" for="lablAi">여행일정</label>
+                <input class="input-Aibox" id="lablAi" type="text" placeholder="여행 일정을 입력하고 ‘일정 생성!’ 버튼을 누르면 여행 일정이 자동으로 생성됩니다.">
+            </form>
+        </section>
+    </main>
+    <script>
+
+    </script>
+</body>
+</html>
