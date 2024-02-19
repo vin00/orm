@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #one {
+            /* pos */
+            position: relative;
+            /* d */
+            display: block;
+            /* v */
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    h1
+    <!-- h1{hello} -->
+    <h1>hello</h1>
+    <!-- h1{hello}+p{world} -->
+    <h1>hello</h1>
+    <p>world</p>
+    <!-- table>tr>td+td+td^tr>td*3 -->
+    <!-- ^는 1계단 상위로 올라감. -->
+    <table>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+    <!-- lorem -->
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis quia maiores, inventore assumenda eligendi consequuntur vero sit. Optio reiciendis, totam saepe veritatis delectus cupiditate exercitationem? Porro harum mollitia ipsa itaque.
+    <!-- lorem10 -->
+    <!-- 10개의 단어만 -->
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt, accusantium.
+    <!-- lorem*10 -->
+    <!-- 10개의 문장 -->
+    <!-- .class1.class2 -->
+    <div class="class1 class2"></div>
+    <!-- #one.class1.class2 -->
+    <div id="one" class="class1 class2"></div>
+
+    <!-- 빈도가 좀 적은 것 -->
+    <!-- p[data='1'] -->
+    <p data="1"></p>
+    <!-- h${hello}*6 -->
+    <h1>hello</h1>
+    <h2>hello</h2>
+    <h3>hello</h3>
+    <h4>hello</h4>
+    <h5>hello</h5>
+    <h6>hello</h6>
+    <!-- p.className${hello}*6 -->
+    <p class="className1">hello</p>
+    <p class="className2">hello</p>
+    <p class="className3">hello</p>
+    <p class="className4">hello</p>
+    <p class="className5">hello</p>
+    <p class="className6">hello</p>
+    <!-- input:time -->
+    <input type="time" name="" id="">
+    <!-- bq -->
+    <blockquote></blockquote>
+</body>
+</html>
